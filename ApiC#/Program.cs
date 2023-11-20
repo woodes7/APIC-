@@ -19,12 +19,12 @@ builder.Services.AddDbContext<ApiDBContexto>(options =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var contexto = scope.ServiceProvider.GetRequiredService<ApiDBContexto>();
-    contexto.Database.Migrate();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var contexto = scope.ServiceProvider.GetRequiredService<ApiDBContexto>();
+//    contexto.Database.Migrate();
 
-}
+//}
 
 
 // Configure the HTTP request pipeline.
