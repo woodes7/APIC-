@@ -18,5 +18,16 @@ namespace Servicios
                 return cxt.Usuarios.ToList();
             }
         }
+        public void CrearUsuario( Usuario usuario)
+        {
+
+        }
+
+        public void ModificarUsuario (  Usuario usuario )
+        {
+
+        }
+        public void SelecciinarUsuario() { 
+        }
     }
 }

@@ -13,11 +13,11 @@ namespace Modelo
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int id_prestamo { get; set; }
+        public int idPrestamo { get; set; }
 
         //ForeignKey de la tabla Usuarios
         public int id_usuario { get; set; }
-        [ForeignKey("id_usuario")]
+        [ForeignKey("idUsuario")]
         public virtual Usuario Usuarios { get; set; }
         public virtual EstadoPrestamo EstadoPrestamo { get; set; }
 
@@ -31,7 +31,7 @@ namespace Modelo
 
         //ForeignKey de la tabla Estado Prestamo
         public int idEstadoPrestamo { get; set; }
-        [ForeignKey("id_estado_prestamo")]
+        [ForeignKey("idEstadoPrestamo")]
           
         public virtual List<Prestamo> PrestamosLibros { get; set; }
 

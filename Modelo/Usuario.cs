@@ -25,7 +25,7 @@ namespace Modelo
         public string clave { get; set; }
 
         public int idAcceso { get; set; }
-        [ForeignKey("id_acceso")]
+        [ForeignKey("idAcceso")]
         public virtual Acceso Acceso { get; set; }
         public bool? estaBloqueado_usuario { get; set; }
         [Column(TypeName = "timestamp without time zone")]
