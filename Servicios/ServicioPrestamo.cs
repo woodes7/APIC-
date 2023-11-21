@@ -25,9 +25,9 @@ namespace Servicios
                 }
             }
 
-            public Prestamo ObtenerPrestamoPorId(int id)
+            public Prestamo ObtenerPrestamoPorId(long idPrestamo)
             {
-                return _contexto.Prestamos.Find(id);
+                return _contexto.Prestamos.Find(idPrestamo);
             }
 
             public void AgregarPrestamo(Prestamo prestamo)
@@ -42,7 +42,7 @@ namespace Servicios
                 _contexto.SaveChanges();
             }
 
-            public void BorrarPrestamo(int idPrestamo)
+            public void BorrarPrestamo(long idPrestamo)
             {
                 var prestamo = _contexto.Prestamos.Find(idPrestamo);
 

@@ -20,9 +20,9 @@ namespace Servicios
             }
         }
 
-        public Autor ObtenerAutorPorId(int id)
+        public Autor ObtenerAutorPorId(long idAutor)
         {
-            return _contexto.Autores.Find(id);
+            return _contexto.Autores.Find(idAutor);
         }
 
         public void AgregarAutor(Autor autor)
@@ -37,7 +37,7 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarAutor(int idAutor)
+        public void BorrarAutor(long idAutor)
         {
             var autor = _contexto.Autores.Find(idAutor);
 

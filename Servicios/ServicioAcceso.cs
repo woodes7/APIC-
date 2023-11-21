@@ -24,9 +24,9 @@ namespace Servicios
             }
         }
 
-        public Acceso ObtenerAccesoPorId(int id)
+        public Acceso ObtenerAccesoPorId(long idAcceso)
         {
-            return _contexto.Accesos.Find(id);
+            return _contexto.Accesos.Find(idAcceso);
         }
 
         public void AgregarAcceso(Acceso acceso)
@@ -41,7 +41,7 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarAcceso(int idAcceso)
+        public void BorrarAcceso(long idAcceso)
         {
             var acceso = _contexto.Accesos.Find(idAcceso);
 

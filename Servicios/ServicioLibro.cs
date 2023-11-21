@@ -21,9 +21,9 @@ namespace Servicios
             }
         }
 
-        public Libro ObtenerLibroPorId(int id)
+        public Libro ObtenerLibroPorId(long idLibro)
         {
-            return _contexto.Libros.Find(id);
+            return _contexto.Libros.Find(idLibro);
         }
 
         public void AgregarLibro(Libro libro)

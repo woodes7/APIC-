@@ -23,9 +23,9 @@ namespace ApiC_.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Usuario> ObtenerUsuarioPorId(long IdUsuario)
+        public ActionResult<Usuario> ObtenerUsuarioPorId(long id)
         {
-            var usuario = servicioUsuario.ObtenerUsuarioPorId(IdUsuario);
+            var usuario = servicioUsuario.ObtenerUsuarioPorId(id);
 
             if (usuario == null)
             {

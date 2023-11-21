@@ -21,9 +21,9 @@ namespace Servicios
             }
         }
 
-        public Genero ObtenerGeneroPorId(int id)
+        public Genero ObtenerGeneroPorId(long idGenero)
         {
-            return _contexto.Generos.Find(id);
+            return _contexto.Generos.Find(idGenero);
         }
 
         public void AgregarGenero(Genero genero)
@@ -38,7 +38,7 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarGenero(int idGenero)
+        public void BorrarGenero(long idGenero)
         {
             var genero = _contexto.Generos.Find(idGenero);
 

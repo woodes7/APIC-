@@ -23,9 +23,9 @@ namespace Servicios
             }
         }      
 
-        public EstadoPrestamo ObtenerEstadoPrestamoPorId(int id)
+        public EstadoPrestamo ObtenerEstadoPrestamoPorId(long idEstadoPrestamos)
         {
-            return _contexto.EstadosPrestamos.Find(id);
+            return _contexto.EstadosPrestamos.Find(idEstadoPrestamos);
         }
 
         public void AgregarEstadoPrestamo(EstadoPrestamo estadoPrestamo)
@@ -40,9 +40,9 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarEstadoPrestamo(int idEstadoPrestamo)
+        public void BorrarEstadoPrestamo(long idEstadoPrestamos)
         {
-            var estadoPrestamo = _contexto.EstadosPrestamos.Find(idEstadoPrestamo);
+            var estadoPrestamo = _contexto.EstadosPrestamos.Find(idEstadoPrestamos);
 
             if (estadoPrestamo != null)
             {

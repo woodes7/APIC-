@@ -5,25 +5,46 @@ using System.Collections.Generic;
 
 namespace ApiC_.Controllers
 {
+    /// <summary>
+    /// Controlador para operaciones relacionadas con las colecciones.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
-    public class ColeccionControlador : ControllerBase
+    public class ColeccionController : ControllerBase
     {
         private readonly ServicioColeccion servicioColeccion;
 
-        public ColeccionControlador(ServicioColeccion servicioColeccion)
+        /// <summary>
+        /// Constructor del controlador de colecciones.
+        /// </summary>
+        /// <param name="servicioColeccion">Servicio de colecciones</param>
+        public ColeccionController(ServicioColeccion servicioColeccion)
         {
             this.servicioColeccion = servicioColeccion;
         }
 
-        // GET: api/ColeccionControlador
+        /// <summary>
+        /// Obtiene la lista de colecciones.
+        /// </summary>
+        /// <returns>Lista de colecciones</returns>
         [HttpGet]
-        public List<Coleccion> Get()
+        public ActionResult<List<Coleccion>> Get()
         {
-            return servicioColeccion.ListColeccion();
+            var colecciones = servicioColeccion.ListColeccion();
+
+            if (colecciones.Count == 0)
+            {
+                return NoContent(); // 204 No Content si no hay colecciones
+            }
+
+            return colecciones;
         }
 
-        // GET api/ColeccionControlador/5
+        /// <summary>
+        /// Obtiene una colección por su ID.
+        /// </summary>
+        /// <param name="id">ID de la colección</param>
+        /// <returns>Colección con el ID especificado</returns>
         [HttpGet("{id}")]
         public ActionResult<Coleccion> Get(int id)
         {
@@ -37,11 +58,14 @@ namespace ApiC_.Controllers
             return coleccion;
         }
 
-        // POST api/ColeccionControlador
+        /// <summary>
+        /// Agrega una nueva colección.
+        /// </summary>
+        /// <param name="coleccion">Datos de la nueva colección</param>
+        /// <returns>Resultado de la operación</returns>
         [HttpPost]
         public ActionResult<Coleccion> Post([FromBody] Coleccion coleccion)
         {
-            // Validar el modelo antes de agregarlo
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -49,15 +73,18 @@ namespace ApiC_.Controllers
 
             servicioColeccion.AgregarColeccion(coleccion);
 
-            // Devolver la colección recién creada y la URL de ubicación
             return CreatedAtAction(nameof(Get), new { id = coleccion.IdColeccion }, coleccion);
         }
 
-        // PUT api/ColeccionControlador/5
+        /// <summary>
+        /// Modifica una colección existente.
+        /// </summary>
+        /// <param name="id">ID de la colección a modificar</param>
+        /// <param name="coleccion">Nuevos datos para la colección</param>
+        /// <returns>Resultado de la operación</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Coleccion coleccion)
         {
-            // Validar el modelo antes de actualizarlo
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -73,7 +100,11 @@ namespace ApiC_.Controllers
             return NoContent(); // 204 No Content si la actualización fue exitosa
         }
 
-        // DELETE api/ColeccionControlador/5
+        /// <summary>
+        /// Elimina una colección por su ID.
+        /// </summary>
+        /// <param name="id">ID de la colección a eliminar</param>
+        /// <returns>Resultado de la operación</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

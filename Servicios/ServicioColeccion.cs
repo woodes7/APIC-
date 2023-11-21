@@ -11,11 +11,11 @@ namespace Servicios
 {
     public class ServicioColeccion
     {
-        private readonly ApiDBContexto _contexto;
+        private readonly ApiDBContexto contexto;
 
         public ServicioColeccion(ApiDBContexto contexto)
         {
-            _contexto = contexto;
+            this.contexto = contexto;
         }
 
         public List<Coleccion> ListColeccion()
@@ -26,32 +26,31 @@ namespace Servicios
             }
         }
 
-        public Coleccion ObtenerColeccionPorId(int id)
+        public Coleccion ObtenerColeccionPorId(long idColeccion)
         {
-            return _contexto.Colecciones.Find(id);
+            return contexto.Colecciones.Find(idColeccion);
         }
 
         public void AgregarColeccion(Coleccion coleccion)
         {
-            _contexto.Colecciones.Add(coleccion);
-            _contexto.SaveChanges();
+            contexto.Colecciones.Add(coleccion);
+            contexto.SaveChanges();
         }
 
         public void ModificarColeccion(Coleccion coleccion)
         {
-            // Aquí puedes implementar la lógica de actualización según tus necesidades
-            _contexto.Colecciones.Update(coleccion);
-            _contexto.SaveChanges();
+            contexto.Colecciones.Update(coleccion);
+            contexto.SaveChanges();
         }
 
-        public void BorrarColeccion(int idColeccion)
+        public void BorrarColeccion(long idColeccion)
         {
-            var coleccion = _contexto.Colecciones.Find(idColeccion);
+            var coleccion = contexto.Colecciones.Find(idColeccion);
 
             if (coleccion != null)
             {
-                _contexto.Colecciones.Remove(coleccion);
-                _contexto.SaveChanges();
+                contexto.Colecciones.Remove(coleccion);
+                contexto.SaveChanges();
             }
         }
     }

@@ -26,9 +26,9 @@ namespace Servicios
             }
         }
        
-        public Usuario ObtenerUsuarioPorId(long IdUsuario)
+        public Usuario ObtenerUsuarioPorId(long idUsuario)
         {
-            return _contexto.Usuarios.Find(IdUsuario);
+            return _contexto.Usuarios.Find(idUsuario);
         }
 
         public void AgregarUsuario(Usuario usuario)
@@ -43,9 +43,9 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarUsuario(long IdUsuario)
+        public void BorrarUsuario(long idUsuario)
         {
-            var usuario = _contexto.Usuarios.Find(IdUsuario);
+            var usuario = _contexto.Usuarios.Find(idUsuario);
 
             if (usuario != null)
             {

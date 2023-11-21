@@ -24,9 +24,9 @@ namespace Servicios
             }
         }       
 
-        public Editorial ObtenerEditorialPorId(int id)
+        public Editorial ObtenerEditorialPorId(long idEditorial)
         {
-            return _contexto.Editoriales.Find(id);
+            return _contexto.Editoriales.Find(idEditorial);
         }
 
         public void AgregarEditorial(Editorial editorial)
@@ -41,7 +41,7 @@ namespace Servicios
             _contexto.SaveChanges();
         }
 
-        public void BorrarEditorial(int idEditorial)
+        public void BorrarEditorial(long idEditorial)
         {
             var editorial = _contexto.Editoriales.Find(idEditorial);
 
