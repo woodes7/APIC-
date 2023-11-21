@@ -17,7 +17,7 @@ namespace ApiC_.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Genero> Get()
+        public List<Genero> Get()
         {
             return generoServicio.ListaGeneros();
         }

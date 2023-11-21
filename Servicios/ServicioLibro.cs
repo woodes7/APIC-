@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace Servicios
 {
-    public class ServicioLibros
+    public class ServicioLibro
     {
         private readonly ApiDBContexto _contexto;
 
-        public ServicioLibros(ApiDBContexto contexto)
+        public ServicioLibro(ApiDBContexto contexto)
         {
             _contexto = contexto;
         }

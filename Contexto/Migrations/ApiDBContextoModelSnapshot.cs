@@ -24,153 +24,159 @@ namespace Contexto.Migrations
 
             modelBuilder.Entity("AutorLibro", b =>
                 {
-                    b.Property<int>("AutoresidAutor")
+                    b.Property<int>("AutoresIdAutor")
                         .HasColumnType("integer");
 
-                    b.Property<int>("LibrosidLibro")
+                    b.Property<int>("ListaLibrosIdLibro")
                         .HasColumnType("integer");
 
-                    b.HasKey("AutoresidAutor", "LibrosidLibro");
+                    b.HasKey("AutoresIdAutor", "ListaLibrosIdLibro");
 
-                    b.HasIndex("LibrosidLibro");
+                    b.HasIndex("ListaLibrosIdLibro");
 
                     b.ToTable("AutorLibro");
                 });
 
             modelBuilder.Entity("Modelo.Acceso", b =>
                 {
-                    b.Property<int>("idAcceso")
+                    b.Property<int>("IdAcceso")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idAcceso"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdAcceso"));
 
-                    b.Property<string>("codigoAcceso")
+                    b.Property<string>("CodigoAcceso")
                         .HasColumnType("text");
 
-                    b.Property<string>("descripcionAcceso")
+                    b.Property<string>("DescripcionAcceso")
                         .HasColumnType("text");
 
-                    b.HasKey("idAcceso");
+                    b.HasKey("IdAcceso");
 
                     b.ToTable("Accesos", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Autor", b =>
                 {
-                    b.Property<int>("idAutor")
+                    b.Property<int>("IdAutor")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idAutor"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdAutor"));
 
-                    b.Property<string>("apellidosAutor")
+                    b.Property<string>("ApellidosAutor")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("nombreAutor")
+                    b.Property<string>("NombreAutor")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("idAutor");
+                    b.HasKey("IdAutor");
 
                     b.ToTable("Autores", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Coleccion", b =>
                 {
-                    b.Property<int>("idColeccion")
+                    b.Property<int>("IdColeccion")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idColeccion"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdColeccion"));
 
-                    b.Property<string>("nombreColeccion")
+                    b.Property<string>("NombreColeccion")
                         .HasColumnType("text");
 
-                    b.HasKey("idColeccion");
+                    b.HasKey("IdColeccion");
 
                     b.ToTable("Colecciones", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Editorial", b =>
                 {
-                    b.Property<int>("idEditorial")
+                    b.Property<int>("IdEditorial")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idEditorial"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdEditorial"));
 
-                    b.Property<string>("nombreEditorial")
+                    b.Property<string>("NombreEditorial")
                         .HasColumnType("text");
 
-                    b.HasKey("idEditorial");
+                    b.HasKey("IdEditorial");
 
                     b.ToTable("Editoriales", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.EstadoPrestamo", b =>
                 {
-                    b.Property<int>("idEstadoPrestamo")
+                    b.Property<int>("IdEstadoPrestamo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idEstadoPrestamo"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdEstadoPrestamo"));
 
-                    b.Property<string>("codigoEstadoPrestamo")
+                    b.Property<string>("CodigoEstadoPrestamo")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("descripcionEstadoPrestamo")
+                    b.Property<string>("DescripcionEstadoPrestamo")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("idEstadoPrestamo");
+                    b.HasKey("IdEstadoPrestamo");
 
                     b.ToTable("EstadosPrestamos", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Genero", b =>
                 {
-                    b.Property<int>("idGenero")
+                    b.Property<int>("IdGenero")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idGenero"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdGenero"));
 
-                    b.Property<string>("descripcionGenero")
+                    b.Property<string>("DescripcionGenero")
                         .HasColumnType("text");
 
-                    b.Property<string>("nombreGenero")
+                    b.Property<string>("NombreGenero")
                         .HasColumnType("text");
 
-                    b.HasKey("idGenero");
+                    b.HasKey("IdGenero");
 
                     b.ToTable("Generos", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Libro", b =>
                 {
-                    b.Property<int>("idLibro")
+                    b.Property<int>("IdLibro")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idLibro"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdLibro"));
 
-                    b.Property<int?>("cantidadLibro")
+                    b.Property<int?>("CantidadLibro")
                         .HasColumnType("integer");
 
-                    b.Property<string>("edicionLibro")
+                    b.Property<string>("EdicionLibro")
                         .HasColumnType("text");
 
-                    b.Property<int>("idColeccion")
+                    b.Property<int>("IdColeccion")
                         .HasColumnType("integer");
 
-                    b.Property<int>("idEditorial")
+                    b.Property<int>("IdEditorial")
                         .HasColumnType("integer");
 
-                    b.Property<int>("idGenero")
+                    b.Property<int>("IdGenero")
                         .HasColumnType("integer");
+
+                    b.Property<string>("IsbnLibro")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TituloLibro")
+                        .HasColumnType("text");
 
                     b.Property<int>("id_coleccion")
                         .HasColumnType("integer");
@@ -181,13 +187,7 @@ namespace Contexto.Migrations
                     b.Property<int>("id_genero")
                         .HasColumnType("integer");
 
-                    b.Property<string>("isbnLibro")
-                        .HasColumnType("text");
-
-                    b.Property<string>("tituloLibro")
-                        .HasColumnType("text");
-
-                    b.HasKey("idLibro");
+                    b.HasKey("IdLibro");
 
                     b.HasIndex("id_coleccion");
 
@@ -200,41 +200,44 @@ namespace Contexto.Migrations
 
             modelBuilder.Entity("Modelo.Prestamo", b =>
                 {
-                    b.Property<int>("idPrestamo")
+                    b.Property<int>("IdPrestamo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idPrestamo"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdPrestamo"));
 
-                    b.Property<int>("EstadoPrestamoidEstadoPrestamo")
+                    b.Property<int>("EstadoPrestamoIdEstadoPrestamo")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("LibroidLibro")
+                    b.Property<DateTime?>("FchEtregPrestamo")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FchFinPrestamo")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("FchaInicPrestamo")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("IdEstadoPrestamo")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("fch_entrega_prestamo")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<int>("Id_usuario")
+                        .HasColumnType("integer");
 
-                    b.Property<DateTime?>("fch_fin_prestamo")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<int?>("LibroIdLibro")
+                        .HasColumnType("integer");
 
-                    b.Property<DateTime?>("fch_inicio_prestamo")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("idEstadoPrestamo")
+                    b.Property<int?>("idEstadoPrestamo")
                         .HasColumnType("integer");
 
                     b.Property<int>("idUsuario")
                         .HasColumnType("integer");
 
-                    b.Property<int>("id_usuario")
-                        .HasColumnType("integer");
+                    b.HasKey("IdPrestamo");
 
-                    b.HasKey("idPrestamo");
+                    b.HasIndex("EstadoPrestamoIdEstadoPrestamo");
 
-                    b.HasIndex("EstadoPrestamoidEstadoPrestamo");
-
-                    b.HasIndex("LibroidLibro");
+                    b.HasIndex("LibroIdLibro");
 
                     b.HasIndex("idEstadoPrestamo");
 
@@ -245,78 +248,78 @@ namespace Contexto.Migrations
 
             modelBuilder.Entity("Modelo.RelaccionAutorLibro", b =>
                 {
-                    b.Property<int>("idAutor")
+                    b.Property<int>("IdAutor")
                         .HasColumnType("integer");
 
-                    b.Property<int>("idLibro")
+                    b.Property<int>("IdLibro")
                         .HasColumnType("integer");
 
-                    b.HasKey("idAutor", "idLibro");
+                    b.HasKey("IdAutor", "IdLibro");
 
-                    b.HasIndex("idLibro");
+                    b.HasIndex("IdLibro");
 
                     b.ToTable("RelaccionAutoresLibros", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.RelaccionLibroPrestamo", b =>
                 {
-                    b.Property<int>("idPrestamo")
+                    b.Property<int>("IdPrestamo")
                         .HasColumnType("integer");
 
-                    b.Property<int>("idLibro")
+                    b.Property<int>("IdLibro")
                         .HasColumnType("integer");
 
-                    b.HasKey("idPrestamo", "idLibro");
+                    b.HasKey("IdPrestamo", "IdLibro");
 
-                    b.HasIndex("idLibro");
+                    b.HasIndex("IdLibro");
 
                     b.ToTable("RelaccionLibrosPrestamos", (string)null);
                 });
 
             modelBuilder.Entity("Modelo.Usuario", b =>
                 {
-                    b.Property<int>("idUsuario")
+                    b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("idUsuario"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdUsuario"));
 
-                    b.Property<string>("apellidos")
-                        .HasColumnType("text");
-
-                    b.Property<string>("clave")
+                    b.Property<string>("Clave")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("dni")
+                    b.Property<string>("Dni")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("estaBloqueado_usuario")
+                    b.Property<bool?>("EstaBloqueadoUsuario")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTime?>("fchAltaUsuario")
+                    b.Property<DateTime?>("FchAltaUsuario")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime?>("fchBajaUsuario")
+                    b.Property<DateTime?>("FchBajaUsuario")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime?>("fchFinBloqueo_usuario")
+                    b.Property<DateTime?>("FchFinBloqueoUsuario")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("IdAcceso")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Napellidos")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("text");
 
                     b.Property<int>("idAcceso")
                         .HasColumnType("integer");
 
-                    b.Property<string>("nombre")
-                        .HasColumnType("text");
-
-                    b.Property<string>("telefono")
-                        .HasColumnType("text");
-
-                    b.HasKey("idUsuario");
+                    b.HasKey("IdUsuario");
 
                     b.HasIndex("idAcceso");
 
@@ -327,13 +330,13 @@ namespace Contexto.Migrations
                 {
                     b.HasOne("Modelo.Autor", null)
                         .WithMany()
-                        .HasForeignKey("AutoresidAutor")
+                        .HasForeignKey("AutoresIdAutor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Modelo.Libro", null)
                         .WithMany()
-                        .HasForeignKey("LibrosidLibro")
+                        .HasForeignKey("ListaLibrosIdLibro")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -369,19 +372,17 @@ namespace Contexto.Migrations
                 {
                     b.HasOne("Modelo.EstadoPrestamo", "EstadoPrestamo")
                         .WithMany()
-                        .HasForeignKey("EstadoPrestamoidEstadoPrestamo")
+                        .HasForeignKey("EstadoPrestamoIdEstadoPrestamo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Modelo.Libro", null)
                         .WithMany("Prestamos")
-                        .HasForeignKey("LibroidLibro");
+                        .HasForeignKey("LibroIdLibro");
 
                     b.HasOne("Modelo.Prestamo", null)
                         .WithMany("PrestamosLibros")
-                        .HasForeignKey("idEstadoPrestamo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("idEstadoPrestamo");
 
                     b.HasOne("Modelo.Usuario", "Usuarios")
                         .WithMany()
@@ -398,13 +399,13 @@ namespace Contexto.Migrations
                 {
                     b.HasOne("Modelo.Autor", "Autor")
                         .WithMany()
-                        .HasForeignKey("idAutor")
+                        .HasForeignKey("IdAutor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Modelo.Libro", "Libro")
                         .WithMany()
-                        .HasForeignKey("idLibro")
+                        .HasForeignKey("IdLibro")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -415,21 +416,21 @@ namespace Contexto.Migrations
 
             modelBuilder.Entity("Modelo.RelaccionLibroPrestamo", b =>
                 {
-                    b.HasOne("Modelo.Libro", "libro")
+                    b.HasOne("Modelo.Libro", "Libro")
                         .WithMany()
-                        .HasForeignKey("idLibro")
+                        .HasForeignKey("IdLibro")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Modelo.Prestamo", "prestamo")
+                    b.HasOne("Modelo.Prestamo", "Prestamo")
                         .WithMany()
-                        .HasForeignKey("idPrestamo")
+                        .HasForeignKey("IdPrestamo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("libro");
+                    b.Navigation("Libro");
 
-                    b.Navigation("prestamo");
+                    b.Navigation("Prestamo");
                 });
 
             modelBuilder.Entity("Modelo.Usuario", b =>

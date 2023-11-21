@@ -16,110 +16,110 @@ namespace Contexto.Migrations
                 name: "Accesos",
                 columns: table => new
                 {
-                    idAcceso = table.Column<int>(type: "integer", nullable: false)
+                    IdAcceso = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    codigoAcceso = table.Column<string>(type: "text", nullable: true),
-                    descripcionAcceso = table.Column<string>(type: "text", nullable: true)
+                    CodigoAcceso = table.Column<string>(type: "text", nullable: true),
+                    DescripcionAcceso = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Accesos", x => x.idAcceso);
+                    table.PrimaryKey("PK_Accesos", x => x.IdAcceso);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Autores",
                 columns: table => new
                 {
-                    idAutor = table.Column<int>(type: "integer", nullable: false)
+                    IdAutor = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreAutor = table.Column<string>(type: "text", nullable: false),
-                    apellidosAutor = table.Column<string>(type: "text", nullable: false)
+                    NombreAutor = table.Column<string>(type: "text", nullable: false),
+                    ApellidosAutor = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Autores", x => x.idAutor);
+                    table.PrimaryKey("PK_Autores", x => x.IdAutor);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Colecciones",
                 columns: table => new
                 {
-                    idColeccion = table.Column<int>(type: "integer", nullable: false)
+                    IdColeccion = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreColeccion = table.Column<string>(type: "text", nullable: true)
+                    NombreColeccion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Colecciones", x => x.idColeccion);
+                    table.PrimaryKey("PK_Colecciones", x => x.IdColeccion);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Editoriales",
                 columns: table => new
                 {
-                    idEditorial = table.Column<int>(type: "integer", nullable: false)
+                    IdEditorial = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreEditorial = table.Column<string>(type: "text", nullable: true)
+                    NombreEditorial = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Editoriales", x => x.idEditorial);
+                    table.PrimaryKey("PK_Editoriales", x => x.IdEditorial);
                 });
 
             migrationBuilder.CreateTable(
                 name: "EstadosPrestamos",
                 columns: table => new
                 {
-                    idEstadoPrestamo = table.Column<int>(type: "integer", nullable: false)
+                    IdEstadoPrestamo = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    codigoEstadoPrestamo = table.Column<string>(type: "text", nullable: false),
-                    descripcionEstadoPrestamo = table.Column<string>(type: "text", nullable: false)
+                    CodigoEstadoPrestamo = table.Column<string>(type: "text", nullable: false),
+                    DescripcionEstadoPrestamo = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EstadosPrestamos", x => x.idEstadoPrestamo);
+                    table.PrimaryKey("PK_EstadosPrestamos", x => x.IdEstadoPrestamo);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Generos",
                 columns: table => new
                 {
-                    idGenero = table.Column<int>(type: "integer", nullable: false)
+                    IdGenero = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreGenero = table.Column<string>(type: "text", nullable: true),
-                    descripcionGenero = table.Column<string>(type: "text", nullable: true)
+                    NombreGenero = table.Column<string>(type: "text", nullable: true),
+                    DescripcionGenero = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Generos", x => x.idGenero);
+                    table.PrimaryKey("PK_Generos", x => x.IdGenero);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
-                    idUsuario = table.Column<int>(type: "integer", nullable: false)
+                    IdUsuario = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    dni = table.Column<string>(type: "text", nullable: false),
-                    nombre = table.Column<string>(type: "text", nullable: true),
-                    apellidos = table.Column<string>(type: "text", nullable: true),
-                    telefono = table.Column<string>(type: "text", nullable: true),
-                    email = table.Column<string>(type: "text", nullable: true),
-                    clave = table.Column<string>(type: "text", nullable: false),
+                    Dni = table.Column<string>(type: "text", nullable: false),
+                    Napellidos = table.Column<string>(type: "text", nullable: true),
+                    Telefono = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Clave = table.Column<string>(type: "text", nullable: false),
+                    IdAcceso = table.Column<int>(type: "integer", nullable: false),
                     idAcceso = table.Column<int>(type: "integer", nullable: false),
-                    estaBloqueado_usuario = table.Column<bool>(type: "boolean", nullable: true),
-                    fchFinBloqueo_usuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
-                    fchAltaUsuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
-                    fchBajaUsuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
+                    EstaBloqueadoUsuario = table.Column<bool>(type: "boolean", nullable: true),
+                    FchFinBloqueoUsuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    FchAltaUsuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    FchBajaUsuario = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuario", x => x.idUsuario);
+                    table.PrimaryKey("PK_Usuario", x => x.IdUsuario);
                     table.ForeignKey(
                         name: "FK_Usuario_Accesos_idAcceso",
                         column: x => x.idAcceso,
                         principalTable: "Accesos",
-                        principalColumn: "idAcceso",
+                        principalColumn: "IdAcceso",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -127,39 +127,39 @@ namespace Contexto.Migrations
                 name: "Libros",
                 columns: table => new
                 {
-                    idLibro = table.Column<int>(type: "integer", nullable: false)
+                    IdLibro = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    isbnLibro = table.Column<string>(type: "text", nullable: true),
-                    tituloLibro = table.Column<string>(type: "text", nullable: true),
-                    edicionLibro = table.Column<string>(type: "text", nullable: true),
-                    cantidadLibro = table.Column<int>(type: "integer", nullable: true),
-                    idEditorial = table.Column<int>(type: "integer", nullable: false),
+                    IsbnLibro = table.Column<string>(type: "text", nullable: true),
+                    TituloLibro = table.Column<string>(type: "text", nullable: true),
+                    EdicionLibro = table.Column<string>(type: "text", nullable: true),
+                    CantidadLibro = table.Column<int>(type: "integer", nullable: true),
+                    IdEditorial = table.Column<int>(type: "integer", nullable: false),
                     id_editorial = table.Column<int>(type: "integer", nullable: false),
-                    idGenero = table.Column<int>(type: "integer", nullable: false),
+                    IdGenero = table.Column<int>(type: "integer", nullable: false),
                     id_genero = table.Column<int>(type: "integer", nullable: false),
-                    idColeccion = table.Column<int>(type: "integer", nullable: false),
+                    IdColeccion = table.Column<int>(type: "integer", nullable: false),
                     id_coleccion = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Libros", x => x.idLibro);
+                    table.PrimaryKey("PK_Libros", x => x.IdLibro);
                     table.ForeignKey(
                         name: "FK_Libros_Colecciones_id_coleccion",
                         column: x => x.id_coleccion,
                         principalTable: "Colecciones",
-                        principalColumn: "idColeccion",
+                        principalColumn: "IdColeccion",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Libros_Editoriales_id_editorial",
                         column: x => x.id_editorial,
                         principalTable: "Editoriales",
-                        principalColumn: "idEditorial",
+                        principalColumn: "IdEditorial",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Libros_Generos_id_genero",
                         column: x => x.id_genero,
                         principalTable: "Generos",
-                        principalColumn: "idGenero",
+                        principalColumn: "IdGenero",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -167,23 +167,23 @@ namespace Contexto.Migrations
                 name: "AutorLibro",
                 columns: table => new
                 {
-                    AutoresidAutor = table.Column<int>(type: "integer", nullable: false),
-                    LibrosidLibro = table.Column<int>(type: "integer", nullable: false)
+                    AutoresIdAutor = table.Column<int>(type: "integer", nullable: false),
+                    ListaLibrosIdLibro = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AutorLibro", x => new { x.AutoresidAutor, x.LibrosidLibro });
+                    table.PrimaryKey("PK_AutorLibro", x => new { x.AutoresIdAutor, x.ListaLibrosIdLibro });
                     table.ForeignKey(
-                        name: "FK_AutorLibro_Autores_AutoresidAutor",
-                        column: x => x.AutoresidAutor,
+                        name: "FK_AutorLibro_Autores_AutoresIdAutor",
+                        column: x => x.AutoresIdAutor,
                         principalTable: "Autores",
-                        principalColumn: "idAutor",
+                        principalColumn: "IdAutor",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AutorLibro_Libros_LibrosidLibro",
-                        column: x => x.LibrosidLibro,
+                        name: "FK_AutorLibro_Libros_ListaLibrosIdLibro",
+                        column: x => x.ListaLibrosIdLibro,
                         principalTable: "Libros",
-                        principalColumn: "idLibro",
+                        principalColumn: "IdLibro",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -191,42 +191,42 @@ namespace Contexto.Migrations
                 name: "Prestamos",
                 columns: table => new
                 {
-                    idPrestamo = table.Column<int>(type: "integer", nullable: false)
+                    IdPrestamo = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    id_usuario = table.Column<int>(type: "integer", nullable: false),
+                    Id_usuario = table.Column<int>(type: "integer", nullable: false),
                     idUsuario = table.Column<int>(type: "integer", nullable: false),
-                    EstadoPrestamoidEstadoPrestamo = table.Column<int>(type: "integer", nullable: false),
-                    fch_inicio_prestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
-                    fch_fin_prestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
-                    fch_entrega_prestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
-                    idEstadoPrestamo = table.Column<int>(type: "integer", nullable: false),
-                    LibroidLibro = table.Column<int>(type: "integer", nullable: true)
+                    EstadoPrestamoIdEstadoPrestamo = table.Column<int>(type: "integer", nullable: false),
+                    FchaInicPrestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    FchFinPrestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    FchEtregPrestamo = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
+                    IdEstadoPrestamo = table.Column<int>(type: "integer", nullable: false),
+                    LibroIdLibro = table.Column<int>(type: "integer", nullable: true),
+                    idEstadoPrestamo = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Prestamos", x => x.idPrestamo);
+                    table.PrimaryKey("PK_Prestamos", x => x.IdPrestamo);
                     table.ForeignKey(
-                        name: "FK_Prestamos_EstadosPrestamos_EstadoPrestamoidEstadoPrestamo",
-                        column: x => x.EstadoPrestamoidEstadoPrestamo,
+                        name: "FK_Prestamos_EstadosPrestamos_EstadoPrestamoIdEstadoPrestamo",
+                        column: x => x.EstadoPrestamoIdEstadoPrestamo,
                         principalTable: "EstadosPrestamos",
-                        principalColumn: "idEstadoPrestamo",
+                        principalColumn: "IdEstadoPrestamo",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Prestamos_Libros_LibroidLibro",
-                        column: x => x.LibroidLibro,
+                        name: "FK_Prestamos_Libros_LibroIdLibro",
+                        column: x => x.LibroIdLibro,
                         principalTable: "Libros",
-                        principalColumn: "idLibro");
+                        principalColumn: "IdLibro");
                     table.ForeignKey(
                         name: "FK_Prestamos_Prestamos_idEstadoPrestamo",
                         column: x => x.idEstadoPrestamo,
                         principalTable: "Prestamos",
-                        principalColumn: "idPrestamo",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdPrestamo");
                     table.ForeignKey(
                         name: "FK_Prestamos_Usuario_idUsuario",
                         column: x => x.idUsuario,
                         principalTable: "Usuario",
-                        principalColumn: "idUsuario",
+                        principalColumn: "IdUsuario",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -234,23 +234,23 @@ namespace Contexto.Migrations
                 name: "RelaccionAutoresLibros",
                 columns: table => new
                 {
-                    idAutor = table.Column<int>(type: "integer", nullable: false),
-                    idLibro = table.Column<int>(type: "integer", nullable: false)
+                    IdAutor = table.Column<int>(type: "integer", nullable: false),
+                    IdLibro = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RelaccionAutoresLibros", x => new { x.idAutor, x.idLibro });
+                    table.PrimaryKey("PK_RelaccionAutoresLibros", x => new { x.IdAutor, x.IdLibro });
                     table.ForeignKey(
-                        name: "FK_RelaccionAutoresLibros_Autores_idAutor",
-                        column: x => x.idAutor,
+                        name: "FK_RelaccionAutoresLibros_Autores_IdAutor",
+                        column: x => x.IdAutor,
                         principalTable: "Autores",
-                        principalColumn: "idAutor",
+                        principalColumn: "IdAutor",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RelaccionAutoresLibros_Libros_idLibro",
-                        column: x => x.idLibro,
+                        name: "FK_RelaccionAutoresLibros_Libros_IdLibro",
+                        column: x => x.IdLibro,
                         principalTable: "Libros",
-                        principalColumn: "idLibro",
+                        principalColumn: "IdLibro",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -258,30 +258,30 @@ namespace Contexto.Migrations
                 name: "RelaccionLibrosPrestamos",
                 columns: table => new
                 {
-                    idPrestamo = table.Column<int>(type: "integer", nullable: false),
-                    idLibro = table.Column<int>(type: "integer", nullable: false)
+                    IdPrestamo = table.Column<int>(type: "integer", nullable: false),
+                    IdLibro = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RelaccionLibrosPrestamos", x => new { x.idPrestamo, x.idLibro });
+                    table.PrimaryKey("PK_RelaccionLibrosPrestamos", x => new { x.IdPrestamo, x.IdLibro });
                     table.ForeignKey(
-                        name: "FK_RelaccionLibrosPrestamos_Libros_idLibro",
-                        column: x => x.idLibro,
+                        name: "FK_RelaccionLibrosPrestamos_Libros_IdLibro",
+                        column: x => x.IdLibro,
                         principalTable: "Libros",
-                        principalColumn: "idLibro",
+                        principalColumn: "IdLibro",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RelaccionLibrosPrestamos_Prestamos_idPrestamo",
-                        column: x => x.idPrestamo,
+                        name: "FK_RelaccionLibrosPrestamos_Prestamos_IdPrestamo",
+                        column: x => x.IdPrestamo,
                         principalTable: "Prestamos",
-                        principalColumn: "idPrestamo",
+                        principalColumn: "IdPrestamo",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AutorLibro_LibrosidLibro",
+                name: "IX_AutorLibro_ListaLibrosIdLibro",
                 table: "AutorLibro",
-                column: "LibrosidLibro");
+                column: "ListaLibrosIdLibro");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Libros_id_coleccion",
@@ -299,9 +299,9 @@ namespace Contexto.Migrations
                 column: "id_genero");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Prestamos_EstadoPrestamoidEstadoPrestamo",
+                name: "IX_Prestamos_EstadoPrestamoIdEstadoPrestamo",
                 table: "Prestamos",
-                column: "EstadoPrestamoidEstadoPrestamo");
+                column: "EstadoPrestamoIdEstadoPrestamo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Prestamos_idEstadoPrestamo",
@@ -314,19 +314,19 @@ namespace Contexto.Migrations
                 column: "idUsuario");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Prestamos_LibroidLibro",
+                name: "IX_Prestamos_LibroIdLibro",
                 table: "Prestamos",
-                column: "LibroidLibro");
+                column: "LibroIdLibro");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RelaccionAutoresLibros_idLibro",
+                name: "IX_RelaccionAutoresLibros_IdLibro",
                 table: "RelaccionAutoresLibros",
-                column: "idLibro");
+                column: "IdLibro");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RelaccionLibrosPrestamos_idLibro",
+                name: "IX_RelaccionLibrosPrestamos_IdLibro",
                 table: "RelaccionLibrosPrestamos",
-                column: "idLibro");
+                column: "IdLibro");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Usuario_idAcceso",

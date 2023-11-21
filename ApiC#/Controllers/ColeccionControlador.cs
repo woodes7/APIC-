@@ -18,7 +18,7 @@ namespace ApiC_.Controllers
 
         // GET: api/ColeccionControlador
         [HttpGet]
-        public IEnumerable<Coleccion> Get()
+        public List<Coleccion> Get()
         {
             return servicioColeccion.ListColeccion();
         }

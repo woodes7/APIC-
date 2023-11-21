@@ -9,23 +9,23 @@ namespace ApiC_.Controllers
     [Route("[controller]")]
     public class LibroControlador : ControllerBase
     {
-        private readonly ServicioLibros servicoLibro;
+        private readonly ServicioLibro servicioLibro;
 
-        public LibroControlador(ServicioLibros servicoLibro)
+        public LibroControlador(ServicioLibro servicioLibro)
         {
-            this.servicoLibro = servicoLibro;
+            this.servicioLibro = servicioLibro;
         }
 
         [HttpGet]
-        public IEnumerable<Libro> Get()
+        public List<Libro> Get()
         {
-            return servicoLibro.ListaLibros();
+            return servicioLibro.ListaLibros();
         }
 
         [HttpGet("{id}")]
         public ActionResult<Libro> Get(int id)
         {
-            var libro = servicoLibro.ObtenerLibroPorId(id);
+            var libro = servicioLibro.ObtenerLibroPorId(id);
 
             if (libro == null)
             {
@@ -43,7 +43,7 @@ namespace ApiC_.Controllers
                 return BadRequest(ModelState);
             }
 
-            servicoLibro.AgregarLibro(libro);
+            servicioLibro.AgregarLibro(libro);
 
             return CreatedAtAction(nameof(Get), new { id = libro.IdLibro }, libro);
         }
@@ -61,7 +61,7 @@ namespace ApiC_.Controllers
                 return BadRequest();
             }
 
-            servicoLibro.ModificarLibro(libro);
+            servicioLibro.ModificarLibro(libro);
 
             return NoContent();
         }
@@ -69,7 +69,7 @@ namespace ApiC_.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            servicoLibro.BorrarLibro(id);
+            servicioLibro.BorrarLibro(id);
 
             return NoContent();
         }

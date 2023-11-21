@@ -11,53 +11,46 @@ namespace Servicios
 {
     public class ServicioUsuario
     {
+        private readonly ApiDBContexto _contexto;
 
-        public List<Usuario> ListaUsuario()
+        public ServicioUsuario(ApiDBContexto contexto)
+        {
+            _contexto = contexto;
+        }
+
+        public List<Usuario> ListaUsuarios()
         {
             using(var cxt = new ApiDBContexto())
             {
                 return cxt.Usuarios.ToList();
             }
         }
-        public Usuario SelecciinarUsuario(long idUsuario)
+       
+        public Usuario ObtenerUsuarioPorId(long IdUsuario)
         {
-
-            using (var cxt = new ApiDBContexto())
-            {
-                return cxt.Usuarios.Where(usu => usu.idUsuario == idUsuario).FirstOrDefault();
-            }
-        }
-        public void CrearUsuario(Usuario usuario)
-        {
-            using( var cxt = new ApiDBContexto())
-            {
-               cxt.Usuarios.Add(usuario);
-                cxt.SaveChanges();
-            }
+            return _contexto.Usuarios.Find(IdUsuario);
         }
 
-        public void ModificarUsuario (long idUsuario, Usuario usuarioNuevo)
-        {   
-           using(var cxt =new ApiDBContexto())
-            {
-                Usuario usuLocal = SelecciinarUsuario(idUsuario);
-                usuarioNuevo.idUsuario = usuLocal.idUsuario;
-                cxt.Usuarios.Update(usuarioNuevo);
-                cxt.SaveChanges();
-            }
-
-        }
-      
-        public void DarBajaUsuario(long idUsuario)
+        public void AgregarUsuario(Usuario usuario)
         {
-            using (var cxt = new ApiDBContexto())
+            _contexto.Usuarios.Add(usuario);
+            _contexto.SaveChanges();
+        }
+
+        public void ModificarUsuario(Usuario usuario)
+        {
+            _contexto.Usuarios.Update(usuario);
+            _contexto.SaveChanges();
+        }
+
+        public void BorrarUsuario(long IdUsuario)
+        {
+            var usuario = _contexto.Usuarios.Find(IdUsuario);
+
+            if (usuario != null)
             {
-                Usuario usuarioAEliminar = SelecciinarUsuario(idUsuario);
-                if (usuarioAEliminar != null)
-                {
-                    cxt.Usuarios.Remove(usuarioAEliminar);
-                    cxt.SaveChanges(); 
-                }
+                _contexto.Usuarios.Remove(usuario);
+                _contexto.SaveChanges();
             }
         }
     }

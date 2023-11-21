@@ -17,7 +17,7 @@ namespace ApiC_.Controllers
             }
 
             [HttpGet]
-            public IEnumerable<Editorial> Get()
+            public List<Editorial> Get()
             {
                 return servicioEditorial.ListaEditoriales();
             }

@@ -17,7 +17,7 @@ namespace ApiC_.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<EstadoPrestamo> Get()
+        public List<EstadoPrestamo> Get()
         {
             return servicioEstadoPrestamo.ListaEstadoPrestamos();
         }

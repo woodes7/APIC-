@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo;
 using Servicios;
+using System.Collections.Generic;
 
 namespace ApiC_.Controllers
 {
@@ -8,20 +9,69 @@ namespace ApiC_.Controllers
     [Route("[controller]")]
     public class UsuarioControlador : ControllerBase
     {
+        private readonly ServicioUsuario servicioUsuario;
 
-        private ServicioUsuario servicioUsuario;
-
-        public UsuarioControlador()
+        public UsuarioControlador(ServicioUsuario servicioUsuario)
         {
-            servicioUsuario = new ServicioUsuario();
+            this.servicioUsuario = servicioUsuario;
         }
 
         [HttpGet]
-        [Route("")]
-        public List<Usuario> ListaUsuario()
+        public List<Usuario> ListaUsuarios()
         {
-            return servicioUsuario.ListaUsuario();
+            return servicioUsuario.ListaUsuarios();
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<Usuario> ObtenerUsuarioPorId(long IdUsuario)
+        {
+            var usuario = servicioUsuario.ObtenerUsuarioPorId(IdUsuario);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            return usuario;
+        }
+
+        [HttpPost]
+        public ActionResult<Usuario> AgregarUsuario([FromBody] Usuario usuario)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            servicioUsuario.AgregarUsuario(usuario);
+
+            return CreatedAtAction(nameof(ObtenerUsuarioPorId), new { IdUsuario = usuario.IdUsuario }, usuario);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult ModificarUsuario(long id, [FromBody] Usuario usuario)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != usuario.IdUsuario)
+            {
+                return BadRequest();
+            }
+
+            servicioUsuario.ModificarUsuario(usuario);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult BorrarUsuario(long id)
+        {
+            servicioUsuario.BorrarUsuario(id);
+
+            return NoContent();
+        }
     }
 }

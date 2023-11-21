@@ -1,15 +1,17 @@
 ﻿using Contexto;
 using Modelo;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
     public class ServicioAutor
     {
+        private readonly ApiDBContexto _contexto;
+
+        public ServicioAutor(ApiDBContexto contexto)
+        {
+            _contexto = contexto;
+        }
         public List<Autor> ListaAutores()
         {
             using (var cxt = new ApiDBContexto())
@@ -18,20 +20,32 @@ namespace Servicios
             }
         }
 
-        public void agregarAutor() { 
-        
-        }
-
-        public void ModificarAutor()
+        public Autor ObtenerAutorPorId(int id)
         {
-
+            return _contexto.Autores.Find(id);
         }
-        public void borrarAutor()
+
+        public void AgregarAutor(Autor autor)
         {
-
+            _contexto.Autores.Add(autor);
+            _contexto.SaveChanges();
         }
 
-       
-                
+        public void ModificarAutor(Autor autor)
+        {
+            _contexto.Autores.Update(autor);
+            _contexto.SaveChanges();
+        }
+
+        public void BorrarAutor(int idAutor)
+        {
+            var autor = _contexto.Autores.Find(idAutor);
+
+            if (autor != null)
+            {
+                _contexto.Autores.Remove(autor);
+                _contexto.SaveChanges();
+            }
+        }
     }
 }

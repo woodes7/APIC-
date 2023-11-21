@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -19,13 +18,12 @@ builder.Services.AddDbContext<ApiDBContexto>(options =>
 
 var app = builder.Build();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    var contexto = scope.ServiceProvider.GetRequiredService<ApiDBContexto>();
-//    contexto.Database.Migrate();
+using (var scope = app.Services.CreateScope())
+{
+    var contexto = scope.ServiceProvider.GetRequiredService<ApiDBContexto>();
+    contexto.Database.Migrate();
 
-//}
-
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
