@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Contexto;
+using Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,14 @@ namespace Servicios
 {
     public class ServicioAutor
     {
+        public List<Autor> ListaAutores()
+        {
+            using (var cxt = new ApiDBContexto())
+            {
+                return cxt.Autores.ToList();
+            }
+        }
+
         public void agregarAutor() { 
         
         }
@@ -20,5 +30,8 @@ namespace Servicios
         {
 
         }
+
+       
+                
     }
 }

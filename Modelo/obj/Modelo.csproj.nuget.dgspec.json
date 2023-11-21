@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pablo\\OneDrive\\repos\\ApiC#\\Modelo\\Modelo.csproj": {}
+    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pablo\\OneDrive\\repos\\ApiC#\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pablo\\OneDrive\\repos\\ApiC#\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\pablo\\OneDrive\\repos\\ApiC#\\Modelo\\Modelo.csproj",
-        "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pablo\\OneDrive\\repos\\ApiC#\\Modelo\\obj\\",
+        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
+        "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
