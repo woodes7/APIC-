@@ -14,24 +14,24 @@ namespace Modelo
             //Primeary Key
             [Key]//Indicar que es una primary key
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-            public int idLibro { get; set; }
+            public int IdLibro { get; set; }
 
-            public string? isbnLibro { get; set; }
-            public string? tituloLibro { get; set; }
-            public string? edicionLibro { get; set; }
-            public int? cantidadLibro { get; set; }
+            public string? IsbnLibro { get; set; }
+            public string? TituloLibro { get; set; }
+            public string? EdicionLibro { get; set; }
+            public int? CantidadLibro { get; set; }
             //ForeignKey de la tabla Editoriales
-            public int idEditorial { get; set; }
+            public int IdEditorial { get; set; }
             [ForeignKey("id_editorial")]
             public virtual Editorial Editorial { get; set; }
 
             //ForeignKey de la tabla Generos
-            public int idGenero { get; set; }
+            public int IdGenero { get; set; }
             [ForeignKey("id_genero")]
             public virtual Genero Genero { get; set; }
 
             //ForeignKey de la tabla Generos
-            public int idColeccion { get; set; }
+            public int IdColeccion { get; set; }
             [ForeignKey("id_coleccion")]
             public virtual Coleccion Coleccion { get; set; }
 

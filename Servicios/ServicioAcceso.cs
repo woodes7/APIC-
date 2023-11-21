@@ -10,7 +10,7 @@ namespace Servicios
 {
     public class ServicioAcceso
     {
-        public List<Acceso> ListAcceso()
+        public List<Acceso> ListaAcceso()
         {
             using (var cxt = new ApiDBContexto())
             {

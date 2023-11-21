@@ -7,30 +7,51 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Servicios
-{
-    public class ServicioPrestamo
     {
-        public List<Prestamo> ListaPrestamos()
+        public class PrestamoServicio
         {
-            using (var cxt = new ApiDBContexto())
+            private readonly ApiDBContexto _contexto;
+
+            public PrestamoServicio(ApiDBContexto contexto)
             {
-                return cxt.Prestamos.ToList();
+                _contexto = contexto;
+            }
+
+            public List<Prestamo> ListaPrestamos()
+            {
+                using (var cxt = new ApiDBContexto())
+                {
+                    return cxt.Prestamos.ToList();
+                }
+            }
+
+            public Prestamo ObtenerPrestamoPorId(int id)
+            {
+                return _contexto.Prestamos.Find(id);
+            }
+
+            public void AgregarPrestamo(Prestamo prestamo)
+            {
+                _contexto.Prestamos.Add(prestamo);
+                _contexto.SaveChanges();
+            }
+
+            public void ModificarPrestamo(Prestamo prestamo)
+            {
+                _contexto.Prestamos.Update(prestamo);
+                _contexto.SaveChanges();
+            }
+
+            public void BorrarPrestamo(int idPrestamo)
+            {
+                var prestamo = _contexto.Prestamos.Find(idPrestamo);
+
+                if (prestamo != null)
+                {
+                    _contexto.Prestamos.Remove(prestamo);
+                    _contexto.SaveChanges();
+                }
             }
         }
-        public void AgregarPrestamo()
-        {
-
-        }
-       
-        public void finalizarPrestamo()
-        {
-
-        }
-
-        public void AnularPrestamo()
-        {
-
-        }
-
     }
-}
+

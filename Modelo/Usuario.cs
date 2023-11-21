@@ -14,26 +14,25 @@ namespace Modelo
 
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
-        public string dni { get; set; }
-        public string? nombre { get; set; }
-        public string? apellidos { get; set; }
-        public string? telefono { get; set; }
+        public string Dni { get; set; }
+        public string? Napellidos { get; set; }
+        public string? Telefono { get; set; }
 
-        public string? email { get; set; }
-        public string clave { get; set; }
+        public string? Email { get; set; }
+        public string Clave { get; set; }
 
-        public int idAcceso { get; set; }
+        public int IdAcceso { get; set; }
         [ForeignKey("idAcceso")]
         public virtual Acceso Acceso { get; set; }
-        public bool? estaBloqueado_usuario { get; set; }
+        public bool? EstaBloqueadoUsuario { get; set; }
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fchFinBloqueo_usuario { get; set; }
+        public DateTime? FchFinBloqueoUsuario { get; set; }
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fchAltaUsuario { get; set; }
+        public DateTime? FchAltaUsuario { get; set; }
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fchBajaUsuario { get; set; }
+        public DateTime? FchBajaUsuario { get; set; }
 
         public List<Prestamo> ListaUsuariosPrestamos;
 
@@ -43,4 +42,4 @@ namespace Modelo
         }
     }
 
-}
+}s

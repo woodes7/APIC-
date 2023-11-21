@@ -9,12 +9,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Modelo
 {
-    [PrimaryKey(nameof(idAutor), nameof(idLibro))]
+    [PrimaryKey(nameof(IdAutor), nameof(IdLibro))]
     public class RelaccionAutorLibro
     {
-        public int idAutor { get; set; }
+        public int IdAutor { get; set; }
         public virtual Autor Autor { get; set; }
-        public int idLibro { get; set; }
+        public int IdLibro { get; set; }
 
         public virtual Libro Libro { get; set; }
 

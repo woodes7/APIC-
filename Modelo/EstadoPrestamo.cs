@@ -8,10 +8,10 @@ namespace Modelo
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idEstadoPrestamo { get; set; }
+        public int IdEstadoPrestamo { get; set; }
 
-        public string codigoEstadoPrestamo { get; set; }
-        public string descripcionEstadoPrestamo { get; set; }
+        public string CodigoEstadoPrestamo { get; set; }
+        public string DescripcionEstadoPrestamo { get; set; }
 
 
     }

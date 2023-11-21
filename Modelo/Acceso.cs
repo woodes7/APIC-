@@ -7,9 +7,9 @@ namespace Modelo
     {
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idAcceso { get; set; }
-        public string? codigoAcceso { get; set; }
-        public string? descripcionAcceso { get; set; }
+        public int IdAcceso { get; set; }
+        public string? CodigoAcceso { get; set; }
+        public string? DescripcionAcceso { get; set; }
 
         public List<Usuario> UsuariosConAcceso { get; set; }
 

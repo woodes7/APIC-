@@ -18,7 +18,7 @@ namespace ApiC_.Controllers
         [Route("")]
         public List<Acceso> ListaUsuario()
         {
-            return servicioAcceso.ListAcceso();
+            return servicioAcceso.ListaAcceso();
         }
     }
 }

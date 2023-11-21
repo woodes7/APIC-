@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo;
 using Servicios;
+using System.Collections.Generic;
 
 namespace ApiC_.Controllers
 {
@@ -8,50 +9,77 @@ namespace ApiC_.Controllers
     [Route("[controller]")]
     public class ColeccionControlador : ControllerBase
     {
-        
-        private ServicioColeccion servicioColeccion;
+        private readonly ServicioColeccion servicioColeccion;
 
-        public ColeccionControlador()
+        public ColeccionControlador(ServicioColeccion servicioColeccion)
         {
-            this.servicioColeccion = new ServicioColeccion();
+            this.servicioColeccion = servicioColeccion;
         }
-        // GET: api/<ValuesController>
+
+        // GET: api/ColeccionControlador
         [HttpGet]
         public IEnumerable<Coleccion> Get()
         {
-            List<Coleccion> listaColecciones = new List<Coleccion>();
-            return listaColecciones;
+            return servicioColeccion.ListColeccion();
         }
 
-        // GET api/<ValuesController>/5
+        // GET api/ColeccionControlador/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Coleccion> Get(int id)
         {
-            return "value";
+            var coleccion = servicioColeccion.ObtenerColeccionPorId(id);
+
+            if (coleccion == null)
+            {
+                return NotFound(); // 404 Not Found si la colección no se encuentra
+            }
+
+            return coleccion;
         }
 
-        // POST api/<ValuesController>
+        // POST api/ColeccionControlador
         [HttpPost]
-        public void Post([FromBody] Colecciones coleccion)
+        public ActionResult<Coleccion> Post([FromBody] Coleccion coleccion)
         {
-            _contexto.Add(coleccion);
+            // Validar el modelo antes de agregarlo
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            servicioColeccion.AgregarColeccion(coleccion);
+
+            // Devolver la colección recién creada y la URL de ubicación
+            return CreatedAtAction(nameof(Get), new { id = coleccion.IdColeccion }, coleccion);
         }
 
-        // PUT api/<ValuesController>/5
-        [HttpPut]
-        public void Put([FromBody] Colecciones coleccion)
+        // PUT api/ColeccionControlador/5
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Coleccion coleccion)
         {
-            _contexto.Update<Colecciones>(coleccion);
+            // Validar el modelo antes de actualizarlo
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            if (id != coleccion.IdColeccion)
+            {
+                return BadRequest(); // 400 Bad Request si el ID no coincide
+            }
+
+            servicioColeccion.ModificarColeccion(coleccion);
+
+            return NoContent(); // 204 No Content si la actualización fue exitosa
         }
 
-        // DELETE api/<ValuesController>/5
-        [HttpDelete]
-        public void Delete([FromBody] Colecciones coleccion)
+        // DELETE api/ColeccionControlador/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            _contexto.Remove<Colecciones>(coleccion);
+            servicioColeccion.BorrarColeccion(id);
 
+            return NoContent(); // 204 No Content si la eliminación fue exitosa
         }
     }
 }

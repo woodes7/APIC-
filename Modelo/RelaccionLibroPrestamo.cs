@@ -8,15 +8,15 @@ using static Modelo.Libro;
 
 namespace Modelo
 {
-    [PrimaryKey(nameof(idPrestamo), nameof(idLibro))]
+    [PrimaryKey(nameof(IdPrestamo), nameof(IdLibro))]
     public class RelaccionLibroPrestamo
     {
-        public int idPrestamo { get; set; }
+        public int IdPrestamo { get; set; }
 
-        public virtual Prestamo prestamo { get; set; }
+        public virtual Prestamo Prestamo { get; set; }
 
-        public int idLibro { get; set; }
+        public int IdLibro { get; set; }
 
-        public virtual Libro libro { get; set; }
+        public virtual Libro Libro { get; set; }
     }
 }

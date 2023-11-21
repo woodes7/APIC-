@@ -9,9 +9,9 @@ namespace Modelo
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idColeccion { get; set; }
+        public int IdColeccion { get; set; }
 
-        public string? nombreColeccion { get; set; }
+        public string? NombreColeccion { get; set; }
 
         public List<Libro> LibrosColeccion { get; set; }
 

@@ -13,24 +13,24 @@ namespace Modelo
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idPrestamo { get; set; }
+        public int IdPrestamo { get; set; }
 
         //ForeignKey de la tabla Usuarios
-        public int id_usuario { get; set; }
+        public int Id_usuario { get; set; }
         [ForeignKey("idUsuario")]
         public virtual Usuario Usuarios { get; set; }
         public virtual EstadoPrestamo EstadoPrestamo { get; set; }
 
         //Campos de tiempos
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fch_inicio_prestamo { get; set; }
+        public DateTime? FchaInicPrestamo { get; set; }
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fch_fin_prestamo { get; set; }
+        public DateTime? FchFinPrestamo { get; set; }
         [Column(TypeName = "timestamp without time zone")]
-        public DateTime? fch_entrega_prestamo { get; set; }
+        public DateTime? FchEtregPrestamo { get; set; }
 
         //ForeignKey de la tabla Estado Prestamo
-        public int idEstadoPrestamo { get; set; }
+        public int IdEstadoPrestamo { get; set; }
         [ForeignKey("idEstadoPrestamo")]
           
         public virtual List<Prestamo> PrestamosLibros { get; set; }

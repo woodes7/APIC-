@@ -8,9 +8,9 @@ namespace Modelo
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
-        public int idEditorial { get; set; }
+        public int IdEditorial { get; set; }
 
-        public string? nombreEditorial { get; set; }
+        public string? NombreEditorial { get; set; }
 
         public List<Libro> LibrosEditorial { get; set; }
 
