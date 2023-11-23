@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g5lNhQoFr2y1XGJmiERvXpitHuxB2mwwLZ/PxNgvDsEFkbqonJBU7gj8Aqy1jEgPk3yUnOp8U+O8bCx6Hnl8OQ==",
+  "dgSpecHash": "AqS/uR16x0aW0tSUvSNdc/MmqyFcg2F4kHitb8T6FbF3uaI0C258TTFNDEpq83/9KaJpQY2ce4oZZmOaaF/aGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj",
+  "projectFilePath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Puesto4\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",
     "C:\\Users\\Puesto4\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.14\\microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Modelo
 {
     public class Prestamo
-    {
+    {   //Atributos
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
@@ -32,9 +32,10 @@ namespace Modelo
         //ForeignKey de la tabla Estado Prestamo
         public int IdEstadoPrestamo { get; set; }
         [ForeignKey("idEstadoPrestamo")]
-          
+
         public virtual List<Prestamo> PrestamosLibros { get; set; }
 
+        //Constructor
         public Prestamo()
         {
             PrestamosLibros = new List<Prestamo>();

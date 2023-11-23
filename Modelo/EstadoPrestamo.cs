@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Modelo
 {
     public class EstadoPrestamo
-    {
+    {   //Atributos
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
@@ -13,6 +13,6 @@ namespace Modelo
         public string CodigoEstadoPrestamo { get; set; }
         public string DescripcionEstadoPrestamo { get; set; }
 
-
+       
     }
 }

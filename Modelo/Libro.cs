@@ -10,9 +10,9 @@ namespace Modelo
 {
     public class Libro
     {
-           
-            //Primeary Key
-            [Key]//Indicar que es una primary key
+        //Atributos
+        //Primeary Key
+        [Key]//Indicar que es una primary key
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
             public int IdLibro { get; set; }
 
@@ -38,7 +38,7 @@ namespace Modelo
             public List<Prestamo> Prestamos {  get; set; }
            
             public  List<Autor> Autores { get; set; }
-
+        //Constructor
         public Libro()
         {
             Autores = new List<Autor>();

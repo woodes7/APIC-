@@ -10,7 +10,7 @@ namespace Modelo
 {
     [PrimaryKey(nameof(IdPrestamo), nameof(IdLibro))]
     public class RelaccionLibroPrestamo
-    {
+    {   //Atributos
         public int IdPrestamo { get; set; }
 
         public virtual Prestamo Prestamo { get; set; }

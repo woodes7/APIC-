@@ -10,7 +10,9 @@ namespace ApiC_.Controllers
     [ApiController]
     [Route("[controller]")]
     public class AutorControlador : ControllerBase
-    {
+    {   /// <summary>
+        /// Servicio para gestionar operaciones relacionadas con las colecciones en la base de datos.
+        /// </summary>
         private readonly ServicioAutor servicioAutor;
 
         /// <summary>

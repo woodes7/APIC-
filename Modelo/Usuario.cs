@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace Modelo
 {
     public class Usuario
-    {
-
+    {   //Atributos
 
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
@@ -36,6 +35,7 @@ namespace Modelo
 
         public List<Prestamo> ListaUsuariosPrestamos;
 
+        //Constructor
         public Usuario()
         {
             ListaUsuariosPrestamos = new List<Prestamo>();

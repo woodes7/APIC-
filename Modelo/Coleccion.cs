@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Modelo
 {
     public class Coleccion
-    {
+    {   //Atributos
 
         //Primeary Key
         [Key]//Indicar que es una primary key
@@ -15,6 +15,7 @@ namespace Modelo
 
         public List<Libro> LibrosColeccion { get; set; }
 
+        //Constructor
         public Coleccion()
         {
             LibrosColeccion = new List<Libro>();

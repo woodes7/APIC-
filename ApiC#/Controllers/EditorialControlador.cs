@@ -4,19 +4,21 @@ using Servicios;
 using System.Collections.Generic;
 
 namespace ApiC_.Controllers
-{ /// <summary>
-  /// Controlador para operaciones relacionadas con las editorial.
-  /// </summary>
+{   /// <summary>
+    /// Controlador para operaciones relacionadas con las editorial.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class EditorialControlador : ControllerBase
-    {
+    {   /// <summary>
+        /// Servicio para gestionar operaciones relacionadas con las colecciones en la base de datos.
+        /// </summary>
         private readonly ServicioEditorial servicioEditorial;
 
         /// <summary>
         /// Constructor del controlador de editorial
         /// </summary>
-        /// <param name="servicioEditorial">Servicio de Editorial</param>
+        /// <param name="servicioEditorial">Servicio de editorial</param>
         public EditorialControlador(ServicioEditorial servicioEditorial)
         {
             this.servicioEditorial = servicioEditorial;

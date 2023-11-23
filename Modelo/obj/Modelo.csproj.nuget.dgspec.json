@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {}
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
+        "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj",
         "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\obj\\",
+        "outputPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\ApiC#\\ApiC#.csproj": {}
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\ApiC#\\ApiC#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\ApiC#\\ApiC#.csproj": {
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\ApiC#\\ApiC#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\ApiC#\\ApiC#.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\ApiC#\\ApiC#.csproj",
         "projectName": "ApiC#",
-        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\ApiC#\\ApiC#.csproj",
+        "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\ApiC#\\ApiC#.csproj",
         "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\ApiC#\\obj\\",
+        "outputPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\ApiC#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj"
               },
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj"
               },
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\Servicios.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\Servicios.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\Servicios.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\Servicios.csproj"
               }
             }
           }
@@ -92,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj": {
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj",
         "projectName": "Contexto",
-        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj",
+        "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj",
         "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\obj\\",
+        "outputPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -116,8 +116,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj"
               }
             }
           }
@@ -173,14 +173,14 @@
         }
       }
     },
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj",
+        "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj",
         "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\obj\\",
+        "outputPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -234,14 +234,14 @@
         }
       }
     },
-    "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\Servicios.csproj": {
+    "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\Servicios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\Servicios.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\Servicios.csproj",
         "projectName": "Servicios",
-        "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\Servicios.csproj",
+        "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\Servicios.csproj",
         "packagesPath": "C:\\Users\\Puesto4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Servicios\\obj\\",
+        "outputPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Servicios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Puesto4\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -258,11 +258,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Contexto\\Contexto.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Contexto\\Contexto.csproj"
               },
-              "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\Puesto4\\Source\\Repos\\APIC-\\Modelo\\Modelo.csproj"
+              "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\Puesto4\\source\\repos\\APIC-\\Modelo\\Modelo.csproj"
               }
             }
           }

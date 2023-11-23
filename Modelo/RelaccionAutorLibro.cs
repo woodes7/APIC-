@@ -11,7 +11,7 @@ namespace Modelo
 {
     [PrimaryKey(nameof(IdAutor), nameof(IdLibro))]
     public class RelaccionAutorLibro
-    {
+    {   //Atributos
         public int IdAutor { get; set; }
         public virtual Autor Autor { get; set; }
         public int IdLibro { get; set; }

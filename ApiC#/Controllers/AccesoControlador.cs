@@ -11,7 +11,9 @@ namespace ApiC_.Controllers
     [ApiController]
     [Route("[controller]")]
     public class AccesoControlador : ControllerBase
-    {
+    {   /// <summary>
+        /// Servicio para gestionar operaciones relacionadas con las colecciones en la base de datos.
+        /// </summary>
         private readonly ServicioAcceso servicioAcceso;
 
         /// <summary>

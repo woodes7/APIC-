@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Modelo
 {
     public class Autor
-    {
+    {   //Atributos
         //Primeary Key
         [Key]//Indicar que es una primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//Para idicar que es incrementable
@@ -15,6 +15,7 @@ namespace Modelo
 
         public List<Libro> ListaLibros {  get; set; }
 
+        //Constructor
         public Autor()
         {
             ListaLibros = new List<Libro>();
